@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDIO GHIBLI</title>
+
+    <style>
+        
+        * {
+            margin: 0; /* reset default margin */
+        }
+
+        /* main container holding all the sections */
+        .container {
+            display: flex; /* arrange boxes side by side */
+            flex-wrap: wrap; /* allow items to wrap on smaller screens */
+        }
+
+        /* individual content box */
+        .box {
+            position: relative; /* so text can be absolutely positioned inside */
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+            overflow: hidden; /* hide overflowed parts of the image */
+        }
+
+        /* styling images inside the boxes */
+        .box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* fill container without distortion */
+            object-position: center;
+            display: block;
+        }
+
+        .text {
+            position: absolute; /* place text in front of the image */
+            color: white;
+            margin: 2rem;
+            font-size: calc(0.75rem + 0.5vw); /* responsive text size */
+            font-family: 'Times New Roman', serif;
+            text-shadow: 2px 2px 3px black; /* shadow for text */
+            text-align: center;
+        }
+
+        button {
+            border: 1px solid azure;
+            border-radius: 20px;
+            background-color: azure;
+            padding: calc(0.3rem + 0.5vw);
+            margin-top: 15px;
+            font-size: calc(0.5rem + 0.5vw);
+            cursor: pointer;
+        }
+
+        /* Responsive Design Breakpoints */
+
+        /* small screens (mobile) */
+        @media (max-width: 576px) {
+            .box {
+                flex: 0 0 100%; /* full width, one boxes per row */
+                height: 25vh; /* 25% of viewport height */
+            }
+            .box img {
+                width: 100vw;
+                height: 25vh;
+            }
+            /* adjust positions for better focus for each images */
+            #img2, #img3, #img4 {
+                object-position: center 30%;
+            }
+        }
+
+        /* medium screens (tablets & small laptops) */
+        @media (min-width: 576px) and (max-width: 1200px) {
+            .box {
+                flex: 0 0 50%;  /* two boxes in one row */
+                height: 50vh; 
+            }
+            .box img {
+                width: 50vw;
+                height: 50vh;
+            }
+            /* adjust positions for better focus for each images */
+            #img1 {
+                object-position: 70%;
+            }
+            #img2 {object-position: 55%;
+            }
+        }
+
+        /* large screens (desktops & wide monitors) */
+        @media (min-width: 1200px) {
+            .box {
+                flex: 0 0 25%;  /* four boxes in one row */
+                height: 100vh;
+            }
+            .box img {
+                width: 25vw;
+                height: 100vh;
+            }
+            /* adjust positions for better focus for each images */
+            #img1 {
+                object-position: 75%;
+            }
+            #img2 {
+                object-position: 58%;
+            }
+            #img3 {
+                object-position: 48%;
+            }
+            #img4 {
+                object-position: 65%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- main flex container -->
+    <div class="container">
+
+        <!-- Howl's Moving Castle Section -->
+        <div class="box" style="background-color: #75909C;">
+            <img id="img1" src="https://wallpaperaccess.com/full/5662175.jpg" alt="Howl's Moving Castle">
+            <div class="text">
+                <h2>Howl's Moving Castle</h2><br>
+                <p>Howl’s Moving Castle is a fantasy story about Sophie, a young woman turned into an old lady by a curse, who finds adventure and love in the magical walking castle of the wizard Howl.</p>
+                <a href="https://www.youtube.com/watch?v=DJeUGpcle8s">
+                    <button>Watch now</button>
+                </a>
+            </div>
+        </div>
+
+        <!-- The Wind Rises Section -->
+        <div class="box" style="background-color: #9FB5C4;">
+            <img id="img2" src="https://wallpaperaccess.com/full/2135779.jpg" alt="The Wind Rises">
+            <div class="text">
+                <h2>The Wind Rises</h2><br>
+                <p>The Wind Rises is a historical drama about Jirō Horikoshi, a young man who dreams of designing airplanes, as he pursues his passion for aviation while facing love, loss, and the harsh realities of war.</p>
+                <a href="https://www.youtube.com/watch?v=TXuswYJFrDM">
+                    <button>Watch now</button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Spirited Away Section -->
+        <div class="box" style="background-color: #DEE6E9;">
+            <img id="img3" src="https://wallpaperaccess.com/full/404620.jpg" alt="Spirited Away">
+            <div class="text">
+                <h2>Spirited Away</h2><br>
+                <p>Spirited Away is about Chihiro, a young girl who gets trapped in a mysterious spirit world and must work at a magical bathhouse to save her parents and find her way back home.</p>
+                    <a href="https://www.youtube.com/watch?v=fDUFP7EeXLE">
+                    <button>Watch now</button>
+                </a>
+            </div>
+        </div>
+
+        <!-- My Neighbor Totoro Section -->
+        <div class="box" style="background-color: #C9D5D8;">
+            <img id="img4" src="https://wallpaperaccess.com/full/33513.jpg" alt="My Neighbor Totoro">
+            <div class="text">
+                <h2>My Neighbor Totoro</h2><br>
+                <p>My Neighbor Totoro is a heartwarming story about two sisters who move to the countryside and befriend Totoro, a gentle forest spirit who helps them through magical adventures and family challenges.</p>
+                <a href="https://www.youtube.com/watch?v=HaLISMAGdOE">
+                    <button>Watch now</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
